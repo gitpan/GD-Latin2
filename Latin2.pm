@@ -71,6 +71,10 @@ are welcome to find problems and send me patches to make it more general.
 
 =head1 CHANGES
 
+0.54
+
+Fixed bug in bdftogd, causing wide characters to be broken.
+
 0.53
 
 Bug with "Up" characters fixed, spotted by Michal Brandejs. This

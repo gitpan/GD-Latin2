@@ -70,6 +70,10 @@ BUGS
     make it more general.
 
 CHANGES
+    0.54
+
+    Fixed bug in bdftogd, causing wide characters to be broken.
+
     0.53
 
     Bug with "Up" characters fixed, spotted by Michal Brandejs. This
