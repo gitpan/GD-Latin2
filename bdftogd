@@ -1,8 +1,18 @@
 #!/usr/bin/perl -w
 
+#
+# Simple convertor from bdf to gd font format.
+#
+# Author: Jan Pazdziora, adelton@fi.muni.cz, http://www.fi.muni.cz/~adelton/
+# at Faculty of Informatics, Masaryk University in Brno, Czech Republic.
+#
+# Example of use:
+# fstobdf -s fontserverhost:7100 -fn 8x16 | ~/perl/bdftogd FontLarge gdfontl
+#
+
 use strict;
 
-my $VERSION = '0.5';
+my $VERSION = '0.51';
 my $now = localtime;
 
 if (@ARGV != 2)
@@ -32,7 +42,7 @@ while (<>)
 	chomp;
 	my ($tag, $value) = split / /, $_, 2;
 	die "Font is not fixed width\n"
-			if $tag eq 'SPACING' and not $value =~ /C/i;
+			if $tag eq 'SPACING' and not $value =~ /[CM]/i;
 	
 	$currentchar = $value if $tag eq 'ENCODING';
 	
@@ -182,12 +192,3 @@ EOF
 
 1;
 
-__END__
-
-fstobdf -s anxur:7100 -fn 8x16 | ~/perl/bdftogd FontLarge gdfontl
-
-fstobdf -s anxur:7100 -fn -misc-fixed-bold-r-normal-sans-13-0-100-100-c-70-iso8859-2 | ~/perl/bdftogd FontMediumBold gdfontmb
-
-fstobdf -s anxur:7100 -fn -misc-fixed-medium-r-normal-sans-8-0-75-75-c-35-iso8859-2 | ~/perl/bdftogd gdFontTiny gdfontt
-
-fstobdf -s aisa:7103 -fn -misc-fixed-medium-r-semicondensed-sans-12-*-75-75-c-60-iso8859-2 | ~/perl/bdftogd FontSmall gdfonts

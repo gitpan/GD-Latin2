@@ -4,7 +4,7 @@
 	bdftogd version 0.5 by Jan Pazdziora, adelton@fi.muni.cz
 	from bdf font
 	-misc-fixed-medium-r-semicondensed-sans-12-116-75-75-c-60-iso8859-2
-	at Wed Jan  7 16:23:05 1998.
+	at Thu Jan  8 14:13:20 1998.
 	No copyright info was found in the original bdf.
  */
 

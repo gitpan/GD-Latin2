@@ -6,9 +6,10 @@
 	This is a header file for gd font, generated using
 	bdftogd version 0.5 by Jan Pazdziora, adelton@fi.muni.cz
 	from bdf font
-	-misc-fixed-medium-r-normal-sans-8-77-75-75-c-35-iso8859-2
-	at Wed Jan  7 15:34:50 1998.
-	No copyright info was found in the original bdf.
+	-Misc-Fixed-Medium-R-Normal--8-80-75-75-C-50-ISO8859-2
+	at Thu Jan  8 13:49:54 1998.
+	The original bdf was holding following copyright:
+	"Libor Skarvada, libor@informatics.muni.cz"
  */
 
 

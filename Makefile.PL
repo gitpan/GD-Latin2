@@ -101,7 +101,7 @@ install_gd :
 
 WriteMakefile(
 	NAME		=> 'GD::Latin2',
-	VERSION		=> 0.5,
+	VERSION		=> 0.51,
 	MAN3PODS	=> { 'Latin2.pm' => '$(INST_MAN3DIR)/GD::Latin2.3' },
 	PM		=> {},
 	### DIR		=> [ 'gddir' ],
