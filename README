@@ -1,0 +1,15 @@
+NAME
+    GD::Latin2 - ISO-8859-2 support for GD module
+
+DESCRIPTION
+    This is a patch that replaces standard ASCII-only font in libgd, used by
+    GD module, by those with full 256 char Latin2 support. In order to put
+    new fonts into the library, the source has to be changed and the library
+    recompiled. That's why you need to have untarred GD library ready before
+    aplying this patch.
+
+AUTHOR
+    Jan Pazdziora, adelton@fi.muni.cz, http://www.fi.muni.cz/~adelton/
+
+    at Faculty of Informatics, Masaryk University in Brno, Czech Republic
+

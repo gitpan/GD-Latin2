@@ -1,0 +1,17 @@
+Latin2.pm
+MANIFEST
+Makefile.PL
+README
+bdftogd
+fonts/gdfontg.c
+fonts/gdfontg.h
+fonts/gdfontl.c
+fonts/gdfontl.h
+fonts/gdfonts.c
+fonts/gdfonts.h
+fonts/gdfontt.c
+fonts/gdfontt.h
+fonttest
+fonttest.gif
+libgd.diff
+test.out.5.gif

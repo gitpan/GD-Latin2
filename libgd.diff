@@ -1,0 +1,36 @@
+*** libgd.c	Wed Jan  7 16:29:21 1998
+--- libgd.c.orig	Wed Jan  7 16:33:57 1998
+***************
+*** 479,485 ****
+  	int l;
+  	l = strlen(s);
+  	for (i=0; (i<l); i++) {
+! 		gdImageChar(im, f, x, y, (unsigned char)s[i], color);
+  		x += f->w;
+  	}
+  }
+--- 479,485 ----
+  	int l;
+  	l = strlen(s);
+  	for (i=0; (i<l); i++) {
+! 		gdImageChar(im, f, x, y, s[i], color);
+  		x += f->w;
+  	}
+  }
+***************
+*** 490,496 ****
+  	int l;
+  	l = strlen(s);
+  	for (i=0; (i<l); i++) {
+! 		gdImageCharUp(im, f, x, y, (unsigned char)s[i], color);
+  		y -= f->w;
+  	}
+  }
+--- 490,496 ----
+  	int l;
+  	l = strlen(s);
+  	for (i=0; (i<l); i++) {
+! 		gdImageCharUp(im, f, x, y, s[i], color);
+  		y -= f->w;
+  	}
+  }
