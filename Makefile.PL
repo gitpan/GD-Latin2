@@ -65,18 +65,38 @@ for $name (<fonts/*>)
 print "Copying test.out.5.gif to $gddir/t\n";
 copy 'test.out.5.gif', "$gddir/t";
 
+
 print "Patching $gddir/libgd/libgd.c\n";
 open IN, "$gddir/libgd/libgd.c" or die "Error reading $gddir/libgd/libgd.c: $!\n";
 open OUT, "> $gddir/libgd/libgd.c.new" or die "Error writing $gddir/libgd/libgd.c.new: $!\b";
 while (<IN>)
 	{
-	s/gdImageChar(Up)?\(im, f, x, y, s\[i\], color\);/gdImageChar(im, f, x, y, (unsigned char)s[i], color);/;
+	s/void gdImageCharUp\(gdImagePtr im, gdFontPtr f, int x, int y, char c, int color\)/void gdImageCharUp(gdImagePtr im, gdFontPtr f, int x, int y, int c, int color)/;
+	s/gdImageChar(Up)?\(im, f, x, y, s\[i\], color\);/gdImageChar$1(im, f, x, y, (unsigned char)s[i], color);/;
 	print OUT $_;
 	}
 close OUT;
 close IN;
 
 rename "$gddir/libgd/libgd.c.new", "$gddir/libgd/libgd.c" or die "Rename $gddir/libgd/libgd.c.new $gddir/libgd/libgd.c failed: $!\n";
+
+
+
+print "Patching $gddir/libgd/gd.h\n";
+open IN, "$gddir/libgd/gd.h" or die "Error reading $gddir/libgd/gd.h: $!\n";
+open OUT, "> $gddir/libgd/gd.h.new" or die "Error writing $gddir/libgd/gd.h.new: $!\b";
+while (<IN>)
+	{
+	s/void gdImageCharUp\(gdImagePtr im, gdFontPtr f, int x, int y, char c, int color\)/void gdImageCharUp(gdImagePtr im, gdFontPtr f, int x, int y, int c, int color)/;
+	print OUT $_;
+	}
+close OUT;
+close IN;
+
+rename "$gddir/libgd/gd.h.new", "$gddir/libgd/gd.h" or die "Rename $gddir/libgd/gd.h.new $gddir/libgd/gd.h failed: $!\n";
+
+
+
 
 my $lns = $Config{'lns'};
 unlink 'gddir' if -r 'gddir';
@@ -101,7 +121,7 @@ install_gd :
 
 WriteMakefile(
 	NAME		=> 'GD::Latin2',
-	VERSION		=> 0.51,
+	VERSION		=> 0.53,
 	MAN3PODS	=> { 'Latin2.pm' => '$(INST_MAN3DIR)/GD::Latin2.3' },
 	PM		=> {},
 	### DIR		=> [ 'gddir' ],

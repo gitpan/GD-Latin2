@@ -15,5 +15,6 @@ fonts/gdfontt.c
 fonts/gdfontt.h
 fonttest
 fonttest.gif
-libgd.diff
+gd.h.diff
+libgd.c.diff
 test.out.5.gif

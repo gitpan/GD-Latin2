@@ -1,5 +1,22 @@
-*** libgd.c	Wed Jan  7 16:29:21 1998
---- libgd.c.orig	Wed Jan  7 16:33:57 1998
+*** libgd.c	Thu Jan  8 17:50:44 1998
+--- libgd.c.orig	Thu Jan  8 17:52:37 1998
+***************
+*** 450,456 ****
+  	}
+  }
+  
+! void gdImageCharUp(gdImagePtr im, gdFontPtr f, int x, int y, int c, int color)
+  {
+  	int cx, cy;
+  	int px, py;
+--- 450,456 ----
+  	}
+  }
+  
+! void gdImageCharUp(gdImagePtr im, gdFontPtr f, int x, int y, char c, int color)
+  {
+  	int cx, cy;
+  	int px, py;
 ***************
 *** 479,485 ****
   	int l;
